@@ -1,0 +1,16 @@
+.role-container{
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+}
+
+.title {
+  font-size: 3vw;
+
+  color: white;
+  margin-bottom: 50px;
+}
