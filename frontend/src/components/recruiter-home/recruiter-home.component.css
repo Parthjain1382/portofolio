@@ -1,6 +1,6 @@
 .recrit-container{
   background-color: black;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   position: relative;
   z-index: 1;
@@ -12,8 +12,15 @@
   animation: none;
 }
 
+.top-container{
+ position: relative;
+  width: 100%;
+  height: 100vh; /* Or whatever height you want */
+  overflow: hidden;
+
+}
 .video-wrapper {
-  position: fixed; /* ⬅ makes it behind everything */
+  position: absolute; /* ⬅ makes it behind everything */
   top: 0;
   left: 0;
   width: 100%;
@@ -24,10 +31,20 @@
 
 .video-wrapper video {
   width: 100%;
-  height: 90vh;
+  height: 95vh;
   object-fit: cover; /* ⬅ makes it cover the whole area like a background */
 }
 
+.video-wrapper::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.5), transparent);
+  pointer-events: none; /* Allows clicks to pass through */
+}
 
 .navbar{
   padding: 1rem 2rem;
@@ -83,6 +100,57 @@
   z-index: 1000;
 }
 
+.description-container{
+  padding: 10% 4%;
+
+  .title{
+    color: white;
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+      display: block;
+  }
+
+  .subtitle{
+    font-size: 1.25rem;
+    max-width: 600px;
+    display: block;
+    line-height: 1.6;
+    color: white;
+  }
+}
+
+.resume-btn,
+.more-Info {
+  background-color: #e50914;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem 0.4rem 0rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 140px;
+  max-width: 80%;
+}
+
+.resume-btn{
+  margin-left: 0rem;
+}
+.more-Info {
+  background-color: rgba(109, 109, 110, 0.7);
+}
+
+.resume-btn:hover {
+  background-color: #f6121d;
+}
+
+.more-Info:hover {
+  background-color: rgba(109, 109, 110, 1);
+}
+
 /* When open */
 .sidebar.open {
   left: 0;
@@ -104,8 +172,16 @@
 }
 
 .poster{
-   background-color: blanchedalmond;
-  width: 100%;
+    width: 100%;
+    padding:2% 4%;
+
+   .title{
+    font-size: 1.2rem;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: block;
+   }
 }
 
 .about{
@@ -114,7 +190,21 @@
 }
 
 @media (max-width: 768px) {
+  .top-container {
+    height: auto; /* Allow it to shrink */
+    min-height: 30vh; /* Keep at least as tall as the video */
+  }
   .video-wrapper video {
     height: 30vh; /* Reduce height on smaller screens */
+  }
+
+  .description-container {
+      .subtitle{
+      display: none;
+    }
+
+    .title{
+      font-size: 2rem;
+    }
   }
 }

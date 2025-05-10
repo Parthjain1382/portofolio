@@ -9,6 +9,7 @@ import {UserDetail} from '../../assets/interface/userDetail';
   styleUrl: './recruiter-home.component.css'
 })
 export class RecruiterHomeComponent {
+  @ViewChild('myVideo') myVideo!: ElementRef<HTMLVideoElement>;
   menuOpen = false;
   userDetails:any;
 
@@ -20,16 +21,15 @@ export class RecruiterHomeComponent {
     this.menuOpen = !this.menuOpen;
   }
 
-@ViewChild('myVideo') myVideo!: ElementRef<HTMLVideoElement>;
-
 playVideo() {
-  const video = this.myVideo.nativeElement;
-  console.log('Video element:', video);
-  video.volume = 0.1
-  if (video.ended) {
-    video.currentTime = 0;
+  if(!this.menuOpen){
+    const video = this.myVideo.nativeElement;
+    video.volume = 0.1
+    if (video.ended) {
+      video.currentTime = 0;
+    }
+    video.play().catch(err => console.warn('Play error:', err));
   }
-  video.play().catch(err => console.warn('Play error:', err));
 }
 
 pauseVideo() {
