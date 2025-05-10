@@ -1,12 +1,36 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import {UserDetail} from '../../assets/interface/userDetail';
 
 @Component({
   selector: 'app-role-selection',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './role-selection.component.html',
   styleUrl: './role-selection.component.css'
 })
 export class RoleSelectionComponent {
 
+  constructor(private router: Router) { }
+
+  roles: UserDetail[] = [
+    { name: 'Recruiter', image: '../../assets/images/avatar-1.jpg'},
+    {name: 'Developer', image: '../../assets/images/avatar-2.jpg'},
+    {name: 'Adventure', image: '../../assets/images/avatar-3.jpg'},
+  ]
+
+  selectRole(rolesObj: UserDetail) {
+
+    switch (rolesObj.name) {
+      case 'Recruiter':
+            this.router.navigate(['/recruitHome'],  { state: rolesObj });
+        break;
+      case 'Developer':
+            this.router.navigate(['/developerHome']);
+        break;
+      case 'Adventure':
+            this.router.navigate(['/adventureHome']);
+    }
+  }
 }

@@ -1,0 +1,120 @@
+.recrit-container{
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  z-index: 1;
+  overflow: auto;
+  flex-direction: column;
+}
+
+.recruit-container:hover video{
+  animation: none;
+}
+
+.video-wrapper {
+  position: fixed; /* ⬅ makes it behind everything */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; /* ⬅ makes it behind everything */
+  height: 100%;
+  overflow: hidden;
+}
+
+.video-wrapper video {
+  width: 100%;
+  height: 90vh;
+  object-fit: cover; /* ⬅ makes it cover the whole area like a background */
+}
+
+
+.navbar{
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.navbar-logo{
+  .title{
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(20px, 3vw, 48px);
+    color: #e50914;
+    position: relative;
+    letter-spacing: 0.125vw;
+    text-align: center;
+  }
+}
+
+.right-navbar{
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.profile-icon img{
+  border-radius: 50%;
+  border: 1px solid white;
+  width:2vw;
+  min-width: 20px; /* Prevents it from being too small */
+  max-width: 80px;
+}
+
+.menu-toggle-btn{
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+/* Sidebar base */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Hidden by default */
+  width: 250px;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  padding: 2rem 1rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+/* When open */
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 1.5rem;
+}
+
+.sidebar a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.poster{
+   background-color: blanchedalmond;
+  width: 100%;
+}
+
+.about{
+  background-color: grey;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .video-wrapper video {
+    height: 30vh; /* Reduce height on smaller screens */
+  }
+}

@@ -3,11 +3,11 @@
 }
 
 .nameTag{
-  width: 100%;
   box-sizing: border-box;
   background-image: url('/assets/images/background.png');
-  height: 100vh;
+  height: 100dvh;
   display: flex;
+  overflow: hidden;
   flex-direction: column;
   justify-content: center;
   align-items: center;

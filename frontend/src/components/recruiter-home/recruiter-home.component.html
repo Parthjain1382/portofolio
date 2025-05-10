@@ -1,0 +1,40 @@
+<div class="recrit-container">
+
+  <div class="video-wrapper">
+    <video   muted #myVideo (mouseenter)="playVideo()"
+      (mouseleave)="pauseVideo()">
+    <source src="../../assets/videos/mountainBack.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="navbar">
+    <div class="navbar-logo">
+      <span class="title">PORTOFOLIO</span>
+    </div>
+    <div class="right-navbar">
+      <div class="profile-icon">
+        <img [src]="userDetails.image" alt="userDetails.name" />
+      </div>
+      <div class="navbar-menu">
+        <button class="menu-toggle-btn" (click)="toggleMenu()">
+          <i class="fa-solid fa-bars" style="color: white;"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="poster">
+
+  </div>
+
+  <div class="about">
+
+  </div>
+</div>
+
+<div class="sidebar" [class.open]="menuOpen">
+  <ul>
+    <li><a href="#">Home</a></li>
+
+  </ul>
+</div>

@@ -1,10 +1,11 @@
 <div class="role-container">
-  <span class="title">Who's Watching ?</span>
 
-  <div class="role-selection">
-    <div class="role-selection__content">
-      
+    <span class="title">Who's Watching ?</span>
+
+    <div class="role-selection">
+      <div class="role-card" *ngFor="let role of roles" (click)="selectRole(role)">
+        <img class="role-image" [src]="role.image" alt="{{ role.name }}" />
+        <span>{{ role.name }}</span>
+      </div>
     </div>
-
   </div>
-</div>
