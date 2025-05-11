@@ -95,7 +95,7 @@
       opacity: 0 !important;
     }
 
-
+  
   @media (max-width: 1200px) {
     .carousel-item {
       width: 20%; /* 5 items per row */

@@ -27,14 +27,14 @@
     <div  class="description-container" (mouseenter)="playVideo()"
         (mouseleave)="pauseVideo()">
       <div>
-        <span class="title">Hi, Recruiter</span>
+        <span class="title">RECRUITER</span>
       </div>
       <div>
         <span class="subtitle">Welcome to my portfolio! Here, you’ll find an overview of my skills, experience, and projects, showcasing how I can contribute to your team.</span>
       </div>
       <div>
-        <button class="resume-btn"><i class="fa-solid fa-play" style="color: #ffffff;"></i> Resume</button>
-        <button class="more-Info"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> More Info</button>
+        <button class="resume-btn" (click)="viewResume()"><i class="fa-solid fa-play" style="color: #ffffff;"></i> Resume</button>
+        <button class="more-Info" (click)="viewMoreInfo()"><i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> More Info</button>
       </div>
     </div>
 

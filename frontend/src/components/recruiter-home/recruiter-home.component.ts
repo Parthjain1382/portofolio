@@ -1,6 +1,8 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import {UserDetail} from '../../assets/interface/userDetail';
 import { CarouselComponent } from '../common/carousel/carousel.component';
+import { MatDialog } from '@angular/material/dialog';
+import { MoreInfoPopupComponent } from '../common/more-info-popup/more-info-popup.component';
 
 @Component({
   selector: 'app-recruiter-home',
@@ -16,32 +18,32 @@ export class RecruiterHomeComponent {
   carouselSlides= [
    {
       imageUrl: 'assets/images/top-trending/resumeImage.png',
-      title: 'The Seat',
+      title: 'Resume',
       tag: 'Recently Added'
     },
     {
       imageUrl: 'assets/images/top-trending/skill.jpg',
-      title: 'The Seat',
+      title: 'Skill',
       tag: 'Recently Added'
     },
     {
       imageUrl: 'assets/images/top-trending/education.png',
-      title: 'Britain and the Blitz',
+      title: 'Education',
       tag: 'Recently Added'
     },
     {
       imageUrl: 'assets/images/top-trending/hobbies.png',
-      title: 'The Seat',
+      title: 'Hobbies',
       tag: 'Recently Added'
     },
      {
       imageUrl: 'assets/images/top-trending/certificate.png',
-      title: 'Britain and the Blitz',
+      title: 'Certificate',
       tag: 'Recently Added'
     },
     {
       imageUrl: 'assets/images/top-trending/connectMe.png',
-      title: 'Britain and the Blitz',
+      title: 'Connect Me',
       tag: 'Recently Added'
     },
     {
@@ -55,6 +57,8 @@ export class RecruiterHomeComponent {
       tag: 'Recently Added'
     },
   ]
+
+  constructor(private dialog: MatDialog) {}
   ngOnInit() {
     this.userDetails = history.state;
   }
@@ -74,9 +78,27 @@ playVideo() {
   }
 }
 
-pauseVideo() {
-    const video = this.myVideo.nativeElement;
-    video.pause();
-}
+  pauseVideo() {
+      const video = this.myVideo.nativeElement;
+      video.pause();
+  }
 
+  viewResume() {
+    const pdfUrl = 'assets/pdf/pranayJain_Resume.pdf';
+    const pdfWindow = window.open(pdfUrl, '_blank');
+
+    if (pdfWindow) {
+      pdfWindow.focus();
+    } else {
+      alert('Please allow popups for this website');
+    }
+  }
+
+  viewMoreInfo(){
+    const isMobile = window.innerWidth <= 600;
+    this.dialog.open(MoreInfoPopupComponent, {
+      width: isMobile ? '90vw' : '30%',
+      height: isMobile ? 'auto' : '30%'
+    });
+  }
 }

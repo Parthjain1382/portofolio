@@ -1,0 +1,204 @@
+.resume-container {
+  width: 100%;
+  height: 100%;
+  background-color: #221F1F;
+  scrollbar-width: thin;
+  scrollbar-color: #e50914 transparent;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+
+  .close-btn{
+    background: transparent;
+    border: none;
+  }
+  .close-btn:focus,
+  .close-btn:hover {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+}
+
+.background-Img {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.resume-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gradient-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  /* Adjust this to control gradient height */
+  background: linear-gradient(to bottom, transparent, #221F1F);
+  pointer-events: none;
+  /* allows clicks to pass through */
+}
+
+.overlay-content {
+  position: absolute;
+  bottom: 20px;
+  /* Adjust as needed */
+  left: 20px;
+  z-index: 2;
+  color: white;
+}
+
+/* Base style for buttons (for larger screens) */
+.resume-btn,
+.more-Info {
+  background-color: #e50914; /* Netflix red for download button */
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0.5rem 0.4rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 140px;
+  max-width: 80%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.resume-btn {
+  margin-left: 0rem;
+}
+
+.more-Info {
+  background-color: rgba(109, 109, 110, 0.7); /* Gray for more info button */
+}
+
+.resume-btn:hover {
+  background-color: #f6121d; /* Darker red on hover */
+}
+
+.more-Info:hover {
+  background-color: rgba(109, 109, 110, 1); /* Lighter gray on hover */
+}
+
+.resume-btn i,
+.more-Info i {
+  margin-right: 5px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .resume-btn,
+  .more-Info {
+    width: 45%; /* Keep buttons side by side */
+    font-size: 0.9rem; /* Decrease font size */
+    padding: 0.6rem 1rem; /* Slightly reduce padding */
+  }
+
+  /* Align buttons side by side */
+  .resume-btn,
+  .more-Info {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+.title {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.subtitle {
+  font-size: 1rem;
+  margin-top: 8px;
+  color: #ddd;
+}
+
+.about-section {
+  color: #fff;
+  padding: 3vh 5vw;
+  background-color: #221F1F;
+
+  padding: 5vh 2vw;
+}
+
+.about-me{
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #e50914;
+}
+.about-title h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #e50914;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #e5e5e5;
+  max-width: 800px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .about-title h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-content p {
+    font-size: 1rem;
+  }
+
+  .about-section {
+    padding: 2vh 4vw;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .background-Img {
+    height: 20vh;
+    /* Adjust height for smaller screens */
+  }
+
+}
+
+
+@media (max-width: 768px) {
+  .background-Img {
+    height: 20vh;
+  }
+
+  .overlay-content {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+}

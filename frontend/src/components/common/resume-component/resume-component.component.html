@@ -1,0 +1,50 @@
+<div class="resume-container">
+  <div class="background-Img">
+    <img src="assets/images/resumePrev.png" alt="Resume preveiw" class="resume-img">
+    <div class="gradient-overlay"></div>
+
+    <div class="close">
+      <button class="close-btn" (click)="onClose()"><i class="fa-solid fa-circle-xmark fa-xl" style="color: #221F1F;" ></i></button>
+    </div>
+
+    <!-- Overlay text on top of image -->
+    <div class="overlay-content">
+      <h1 class="title">RESUME</h1>
+      <button class="resume-btn"  (click)="downloadPdf()">
+      <i class="fa-solid fa-download"></i> Download
+      </button>
+      <button class="more-Info"(click)="openPdf()">
+        <i class="fa-solid fa-circle-info"></i> View
+      </button>
+    </div>
+  </div>
+
+  <!---About -->
+  <div class="about-section">
+    <div class="about-title">
+      <span class="about-me">About Me</span>
+    </div>
+      <div class="about-content">
+        <p>
+          I am a passionate and results-driven Software Engineer with a strong academic background in Computer Science. With a keen interest in developing innovative solutions, I specialize in full-stack development, excelling in both front-end and back-end technologies. I continuously seek to improve my skills and adapt to the rapidly evolving tech landscape, ensuring that I am at the forefront of cutting-edge advancements.
+          <br><br>
+          Throughout my career, I have demonstrated a commitment to excellence in both technical proficiency and collaborative problem-solving. My expertise spans across various programming languages, frameworks, and tools, with a particular focus on JavaScript, Node.js, MongoDB, and cloud technologies like AWS.
+          <br><br>
+          I am passionate about solving complex problems and creating solutions that drive business success. I thrive in challenging environments and am always looking for opportunities to expand my knowledge and take on new, impactful projects.
+        </p>
+
+        <ul>
+          <li><strong>Full-stack development expertise</strong>: Skilled in both front-end and back-end technologies.</li>
+          <br>
+          <li><strong>Strong foundation in computer science</strong>: Accomplished in software engineering with a focus on practical applications and problem-solving.</li>
+          <br>
+          <li><strong>Continuous learner</strong>: Committed to staying updated with emerging technologies and trends in the industry.</li>
+          <br>
+          <li><strong>Cloud and performance optimization</strong>: Experienced with cloud solutions like AWS, MongoDB, and improving system performance through microservices architecture.</li>
+          <br>
+          <li><strong>Collaborative problem-solving</strong>: Adept at working with teams to design scalable, high-performance systems and deliver impactful solutions.</li>
+        </ul>
+      </div>
+
+  </div>
+</div>
