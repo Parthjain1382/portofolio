@@ -1,0 +1,18 @@
+<div class="carousel-container">
+      <div class="carousel-navigation">
+        <button class="nav-button prev" (click)="scrollLeft()" [class.disabled]="scrollPosition <= 0">❮</button>
+
+        <div class="carousel-track" #carouselTrack>
+          <div *ngFor="let item of items" class="carousel-item">
+            <div class="item-content">
+              <img [src]="item.imageUrl" [alt]="item.title" class="item-image">
+              <div *ngIf="item.tag" class="item-tag">{{ item.tag }}</div>
+            </div>
+          </div>
+        </div>
+
+        <button class="nav-button next" (click)="scrollRight()"
+                [class.disabled]="scrollPosition >= maxScrollPosition">❯
+        </button>
+      </div>
+</div>
