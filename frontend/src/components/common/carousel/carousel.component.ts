@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatDialog } from '@angular/material/dialog';
 import { ResumeComponentComponent } from '../resume-component/resume-component.component';
 import { Router } from '@angular/router';
+import { EducationComponent } from '../education/education.component';
 
 interface CarouselItem {
   imageUrl: string;
@@ -70,9 +71,9 @@ export class CarouselComponent {
 
 
   onItemClick(item: CarouselItem) {
+    const isMobile = window.innerWidth <= 600;
     switch(item.title) {
       case 'Resume':
-            const isMobile = window.innerWidth <= 600;
             this.dialog.open(ResumeComponentComponent, {
               width: isMobile ? '90vw' : '60%',
               height: isMobile ? '95vh' : '100%',
@@ -83,8 +84,12 @@ export class CarouselComponent {
             this.router.navigate(['/skill']);
       break;
       case 'Education':
-        // Handle Education click
-        break;
+            this.dialog.open(EducationComponent, {
+              width: isMobile ? '90vw' : '60%',
+              height: isMobile ? '95vh' : '100%',
+              panelClass: 'centered-dialog',
+            });
+      break;
       case 'Hobbies':
         // Handle Hobbies click
         break;

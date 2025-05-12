@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import {UserDetail} from '../../assets/interface/userDetail';
+import { UserDataService } from '../../service/user-data.service';
 
 @Component({
   selector: 'app-role-selection',
@@ -12,7 +13,7 @@ import {UserDetail} from '../../assets/interface/userDetail';
 })
 export class RoleSelectionComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userDataService: UserDataService) { }
 
   roles: UserDetail[] = [
     { name: 'Recruiter', image: '../../assets/images/avatar-1.jpg'},
@@ -24,7 +25,8 @@ export class RoleSelectionComponent {
 
     switch (rolesObj.name) {
       case 'Recruiter':
-            this.router.navigate(['/recruitHome'],  { state: rolesObj });
+           this.userDataService.setUserData(rolesObj);
+            this.router.navigate(['/recruitHome']);
         break;
       case 'Developer':
             this.router.navigate(['/developerHome']);

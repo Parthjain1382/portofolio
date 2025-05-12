@@ -3,6 +3,7 @@ import {UserDetail} from '../../assets/interface/userDetail';
 import { CarouselComponent } from '../common/carousel/carousel.component';
 import { MatDialog } from '@angular/material/dialog';
 import { MoreInfoPopupComponent } from '../common/more-info-popup/more-info-popup.component';
+import { UserDataService } from '../../service/user-data.service';
 
 @Component({
   selector: 'app-recruiter-home',
@@ -58,9 +59,9 @@ export class RecruiterHomeComponent {
     },
   ]
 
-  constructor(private dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private userDataService: UserDataService) {}
   ngOnInit() {
-    this.userDetails = history.state;
+    this.userDetails = this.userDataService.getUserData();
   }
 
   toggleMenu(){

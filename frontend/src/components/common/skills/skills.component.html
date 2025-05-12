@@ -1,1 +1,24 @@
-<p style="color: aliceblue;">skills works!</p>
+<section class="skills-section">
+  <button class="back-button" (click)="goBack()">
+    &larr; Back
+  </button>
+  <div class="container">
+    <h2 class="section-title">My Skills</h2>
+    <div class="skills-categories">
+      <div *ngFor="let category of skillCategories" class="category-container">
+        <h3 class="category-title">{{ category.title }}</h3>
+
+        <div class="skills-grid">
+          <div *ngFor="let skill of category.skills" class="skill-card">
+            <div class="skill-icon">
+              <!-- <img [src]="skill.icon" [alt]="skill.name + ' icon'"> -->
+              <i class="skill-icon-i" [ngClass]="skill.icon"></i>
+            </div>
+            <h4 class="skill-name">{{ skill.name }}</h4>
+            <p class="skill-description">{{ skill.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
